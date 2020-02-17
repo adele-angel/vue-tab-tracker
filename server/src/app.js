@@ -8,6 +8,10 @@ app.use(morgan("short"));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get("/status", (req, res) => res.send({ message: "TabTracker server" }));
+app.post("/register", (req, res) =>
+	res.send({
+		message: `Hello ${req.body.email}! Your user was registered!`
+	})
+);
 
 app.listen(process.env.PORT || 3000);
