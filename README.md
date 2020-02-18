@@ -1,10 +1,12 @@
 # vueTabTracker [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4)](https://github.com/prettier/prettier) [![npm version: 6.13.7](https://img.shields.io/badge/npm%20version-6.13.7-blue)](https://www.npmjs.com/) [![@vue/cli: 4.2.2](https://img.shields.io/badge/@vue/cli-4.2.2-blue)](https://github.com/vuejs/vue-cli)
 
-A Vue.js, Node.js & Express web application for keeping track of guitar tabs (full stack application).
-For live demo [click here](https://adele-angel.github.io/vue-tab-tracker)
+A Vue.js, Node.js & Express web application for keeping track of guitar tabs (Full Stack application).
 
 :warning: :construction: work in progress
+
 This project was created for the purpose of in-depth learning about MVC, Vue.js, VUEX, Sequelize, Node.js and Express.
+
+For live demo [click here](https://adele-angel.github.io/vue-tab-tracker)
 
 ## Built with
 
