@@ -4,14 +4,20 @@
 	"description": "tab-tracker back-end",
 	"main": "src/app.js",
 	"scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [
 		"vue-tab-tracker",
+		"server",
 		"node.js",
-		"express"
+		"express",
+		"Sequelize",
+		"ORM",
+		"database",
+		"JavaScript",
+		"ES6"
 	],
-	"author": "",
+	"author": "Adele Angel",
 	"license": "ISC",
 	"devDependencies": {
 		"nodemon": "^2.0.2"
@@ -21,5 +27,8 @@
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
 		"morgan": "^1.9.1"
+	},
+	"engines": {
+		"node": "13.5.0"
 	}
 }
