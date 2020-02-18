@@ -3,15 +3,25 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+// configuration data
+const config = require("./config/config");
+// database, exporting the sequelize object
+const { sequelize } = require("./models/index");
+
+// middleware initialization
 const app = express();
 app.use(morgan("short"));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.post("/register", (req, res) =>
-	res.send({
-		message: `Hello ${req.body.email}! Your user was registered!`
-	})
-);
+// routes
+require("./routes/index")(app);
 
-app.listen(process.env.PORT || 3000);
+/**
+ * connecting (syncing) sequelize to the database
+ * creating tables if they don't exist
+ */
+sequelize.sync().then(() => {
+	app.listen(config.port); // start server
+	console.log(`Server started on port ${config.port}`);
+});
