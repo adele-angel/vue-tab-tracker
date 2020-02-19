@@ -1,9 +1,18 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>&nbsp;|
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <!-- sizes page content based upon application components -->
+    <v-content>
+      <!-- provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- using vue-router -->
+        <router-view />
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
+
+<script>
+export default {
+  name: "App"
+};
+</script>

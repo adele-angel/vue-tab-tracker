@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default () => {
-	// return connector
-	return axios.create({
-		baseURL: "http://localhost:3000" // server address
-	});
+  // return connector
+  return axios.create({
+    baseURL: "http://localhost:3000" // server address
+  });
 };

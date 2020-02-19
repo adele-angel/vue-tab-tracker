@@ -12,6 +12,7 @@ For live demo [click here](https://adele-angel.github.io/vue-tab-tracker)
 
 -   Vue.js as client-side framework
 -   JSX (ES6 JavaScript syntax)
+-   Vuetify.js (Vue UI library, based on Material Design)
 -   CSS3
 -   HTML5
 -   Node.js as runtime environment
@@ -29,7 +30,7 @@ For live demo [click here](https://adele-angel.github.io/vue-tab-tracker)
 **Client side dependencies**
 
 ```
-$ npm install --save axios
+$ npm install --save axios vuetify
 ```
 
 **Server side dependencies**
