@@ -10,20 +10,20 @@ For live demo [click here](https://adele-angel.github.io/vue-tab-tracker)
 
 ## Built with
 
--   Vue.js as client-side framework
--   JSX (ES6 JavaScript syntax)
--   Vuetify.js (Vue UI library, based on Material Design)
--   CSS3
--   HTML5
--   Node.js as runtime environment
--   Express.js as server-side framework
--   Sequelize ORM for database
+- Vue.js as client-side framework
+- JSX (ES6 JavaScript syntax)
+- Vuetify.js (Vue UI library, based on Material Design)
+- CSS3
+- HTML5
+- Node.js as runtime environment
+- Express.js as server-side framework
+- Sequelize ORM for database
 
 ## Prerequisites
 
--   Single page application
--   MVC pattern: Model-View-Controller architecture
--   Reactive state management (Redux pattern using VUEX)
+- Single page application
+- MVC pattern: Model-View-Controller architecture
+- Reactive state management (Redux pattern using VUEX)
 
 ## Packages
 
@@ -37,7 +37,7 @@ $ npm install --save axios vuetify
 
 ```
 $ npm install --save
-express cors morgan body-parser sequelize sqlite3 @hapi/joi
+express cors morgan body-parser sequelize sqlite3 @hapi/joi jsonwebtoken bcrypt
 ```
 
 ```

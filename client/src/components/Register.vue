@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col xs="12" md="6" offset-md="3">
+      <v-col xs="12"  lg="8" offset-lg="2">
         <v-card class="mx-auto" tile>
           <v-app-bar dark color="cyan darken-2 elevation-0">
             <v-toolbar-title>Register</v-toolbar-title>
@@ -32,11 +32,11 @@
                 required
               ></v-text-field>
               <v-row>
-                <v-col cols="12" md="6">
-                  <v-btn :disabled="!valid" @click="register" color="primary" block>Register</v-btn>
+                <v-col cols="12" sm="6">
+                  <v-btn @click="register" dark tile color="cyan darken-2" block>Register</v-btn>
                 </v-col>
-                <v-col cols="12" md="6">
-                  <v-btn @click="reset" color="warning" block>Reset</v-btn>
+                <v-col cols="12" sm="6">
+                  <v-btn @click="reset" dark tile color="cyan darken-4" block>Reset</v-btn>
                 </v-col>
               </v-row>
             </v-form>

@@ -7,4 +7,8 @@ module.exports = app => {
 	// @desc    Register user
 	// @access  Public
 	app.post("/register", AuthenticationControlPolicy.register, controllers.AuthenticationController.register);
+	// @route   POST /login
+	// @desc    Login user
+	// @access  Public
+	app.post("/login", controllers.AuthenticationController.login);
 };

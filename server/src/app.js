@@ -21,6 +21,10 @@ require("./routes/index")(app);
  * connecting (syncing) sequelize to the database
  * creating tables if they don't exist
  */
+
+// sequelize.sync({ force: true })
+// clears up the database - drops all tables
+// should not be used for production environment!
 sequelize.sync().then(() => {
 	app.listen(config.port); // start server
 	console.log(`Server started on port ${config.port}`);
