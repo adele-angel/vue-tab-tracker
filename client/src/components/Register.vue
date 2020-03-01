@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col xs="12"  lg="8" offset-lg="2">
+      <v-col xs="12" lg="8" offset-lg="2">
         <v-card class="mx-auto" tile>
           <v-app-bar dark color="cyan darken-2 elevation-0">
             <v-toolbar-title>Register</v-toolbar-title>
@@ -22,6 +22,7 @@
                 v-model="password"
                 :counter="32"
                 label="Password"
+                autocomplete="off"
                 required
               ></v-text-field>
               <v-text-field
@@ -29,6 +30,7 @@
                 :rules="rules"
                 v-model="match"
                 label="Repeat Password"
+                autocomplete="off"
                 required
               ></v-text-field>
               <v-row>

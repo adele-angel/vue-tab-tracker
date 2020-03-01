@@ -18,7 +18,10 @@ module.exports = {
 
 			res.status(200).json({
 				user,
-				token: jwtSignUser(payload)
+				token: jwtSignUser({
+					email: user.email,
+					password: user.password
+				})
 			});
 		} catch (err) {
 			res.status(400).send({
