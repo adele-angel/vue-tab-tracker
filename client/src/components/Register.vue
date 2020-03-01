@@ -1,59 +1,45 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col xs="12" lg="8" offset-lg="2">
-        <v-card class="mx-auto" tile>
-          <v-app-bar dark color="cyan darken-2 elevation-0">
-            <v-toolbar-title>Register</v-toolbar-title>
-          </v-app-bar>
-
-          <v-card-text class="px-xs-10 px-md-12">
-            <v-form ref="formRegister" autocomplete="off" :lazy-validation="lazy">
-              <v-text-field
-                type="email"
-                :rules="emailRules"
-                v-model="email"
-                label="E-Mail"
-                required
-              ></v-text-field>
-              <v-text-field
-                type="password"
-                :rules="rules"
-                v-model="password"
-                :counter="32"
-                label="Password"
-                autocomplete="off"
-                required
-              ></v-text-field>
-              <v-text-field
-                type="password"
-                :rules="rules"
-                v-model="match"
-                label="Repeat Password"
-                autocomplete="off"
-                required
-              ></v-text-field>
-              <v-row>
-                <v-col cols="12" sm="6">
-                  <v-btn @click="register" dark tile color="cyan darken-2" block>Register</v-btn>
-                </v-col>
-                <v-col cols="12" sm="6">
-                  <v-btn @click="reset" dark tile color="cyan darken-4" block>Reset</v-btn>
-                </v-col>
-              </v-row>
-            </v-form>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+  <Panel title="Register">
+    <v-form ref="formRegister" autocomplete="off" :lazy-validation="lazy">
+      <v-text-field type="email" :rules="emailRules" v-model="email" label="E-Mail" required></v-text-field>
+      <v-text-field
+        type="password"
+        :rules="rules"
+        v-model="password"
+        :counter="32"
+        label="Password"
+        autocomplete="off"
+        required
+      ></v-text-field>
+      <v-text-field
+        type="password"
+        :rules="rules"
+        v-model="match"
+        label="Repeat Password"
+        autocomplete="off"
+        required
+      ></v-text-field>
+      <v-row>
+        <v-col cols="12" sm="6">
+          <v-btn @click="register" dark tile color="cyan darken-2" block>Register</v-btn>
+        </v-col>
+        <v-col cols="12" sm="6">
+          <v-btn @click="reset" dark tile color="cyan darken-4" block>Reset</v-btn>
+        </v-col>
+      </v-row>
+    </v-form>
+  </Panel>
 </template>
 
 <script>
+import Panel from "@/components/Panel";
 import AuthenticationService from "@/services/AuthenticationService";
 
 export default {
   name: "Register",
+  components: {
+    Panel
+  },
   data() {
     return {
       valid: true,
