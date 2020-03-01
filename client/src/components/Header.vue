@@ -6,6 +6,9 @@
     <v-spacer></v-spacer>
 
     <!-- navbar buttons -->
+    <v-btn value="Browse" text to="songs">
+      <span>Browse</span>
+    </v-btn>
     <v-btn value="Login" text to="login" v-if="!$store.state.isUserLoggedIn">
       <span class="hidden-xs-only mr-1">Login</span>
       <v-icon>mdi-account-key</v-icon>
