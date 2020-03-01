@@ -6,12 +6,17 @@
     <v-spacer></v-spacer>
 
     <!-- navbar buttons -->
-    <v-btn value="Login" text to="login">
-      <v-icon>mdi-account</v-icon>
-      <span class="hidden-sm-and-down">Login</span>
+    <v-btn value="Login" text to="login" v-if="!$store.state.isUserLoggedIn">
+      <span class="hidden-xs-only mr-1">Login</span>
+      <v-icon>mdi-account-key</v-icon>
     </v-btn>
-    <v-btn value="Sign Up" text to="register">
-      <span>Sign Up</span>
+    <v-btn @click="logout" value="Logout" text to="/" v-if="$store.state.isUserLoggedIn">
+      <span class="hidden-xs-only mr-1">Logout</span>
+      <v-icon>mdi-account-arrow-left</v-icon>
+    </v-btn>
+    <v-btn value="Sign Up" text to="register" v-if="!$store.state.isUserLoggedIn">
+      <span class="hidden-xs-only mr-1">Sign Up</span>
+      <v-icon>mdi-account-heart</v-icon>
     </v-btn>
   </v-app-bar>
 </template>
@@ -25,6 +30,10 @@ export default {
   methods: {
     navigateTo(route) {
       this.$router.push(route);
+    },
+    logout() {
+      this.$store.dispatch("setToken", null);
+      this.$store.dispatch("setUser", null);
     }
   }
 };
