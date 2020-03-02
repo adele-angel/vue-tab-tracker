@@ -9,6 +9,14 @@ module.exports = app => {
 	app.post("/register", AuthenticationControlPolicy.register, controllers.AuthenticationController.register);
 	// @route   POST /login
 	// @desc    Login user
-	// @access  Public
+	// @access  Private
 	app.post("/login", controllers.AuthenticationController.login);
+	// @route   GET /songs
+	// @desc    Display all songs
+	// @access  Public
+	app.get("/songs", controllers.SongsController.index);
+	// @route   POST /songs
+	// @desc    Create song
+	// @access  Public
+	app.post("/songs", controllers.SongsController.createSong);
 };

@@ -29,6 +29,11 @@ const routes = [
 		path: "/songs",
 		name: "songs",
 		component: () => import("../components/Songs.vue")
+	},
+	{
+		path: "/songs/create",
+		name: "create-song",
+		component: () => import("../components/CreateSong.vue")
 	}
 ];
 

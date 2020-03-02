@@ -4,7 +4,9 @@
  */
 
 const AuthenticationController = require("../controllers/AuthenticationController");
+const SongsController = require("../controllers/SongsController");
 
 module.exports = {
-	AuthenticationController
+	AuthenticationController,
+	SongsController
 };

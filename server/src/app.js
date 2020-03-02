@@ -25,7 +25,7 @@ require("./routes/index")(app);
 // sequelize.sync({ force: true })
 // clears up the database - drops all tables
 // should not be used for production environment!
-sequelize.sync().then(() => {
+sequelize.sync({ force: false }).then(() => {
 	app.listen(config.port); // start server
 	console.log(`Server started on port ${config.port}`);
 });

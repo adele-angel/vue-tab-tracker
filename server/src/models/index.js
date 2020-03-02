@@ -27,6 +27,5 @@ fs.readdirSync(__dirname)
  * in other parts of the code
  */
 db.sequelize = sequelize;
-db.Sequelize = Sequelize;
 
 module.exports = db;

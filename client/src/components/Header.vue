@@ -1,14 +1,15 @@
 <template>
   <v-app-bar color="cyan darken-2" dark dense fixed>
     <v-toolbar-title>
-      <span class="logo" @click="navigateTo({name: 'home'})">vueTabTracker</span>
+      <span class="logo mr-6" @click="navigateTo({name: 'home'})">vueTabTracker</span>
     </v-toolbar-title>
-    <v-spacer></v-spacer>
-
-    <!-- navbar buttons -->
     <v-btn value="Browse" text to="songs">
       <span>Browse</span>
     </v-btn>
+    <v-spacer></v-spacer>
+
+    <!-- navbar buttons -->
+
     <v-btn value="Login" text to="login" v-if="!$store.state.isUserLoggedIn">
       <span class="hidden-xs-only mr-1">Login</span>
       <v-icon>mdi-account-key</v-icon>
@@ -32,6 +33,8 @@ export default {
   },
   methods: {
     navigateTo(route) {
+      console.log(route);
+
       this.$router.push(route);
     },
     logout() {
