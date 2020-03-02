@@ -13,10 +13,23 @@ module.exports = {
 			});
 		}
 	},
+	async showSong(req, res) {
+		try {
+			const song = await Song.findAll({
+				where: {
+					id: req.params.songId
+				}
+			});
+			
+			res.status(200).json(song);
+		} catch (err) {
+			res.status(500).send({
+				error: "An error has occurred trying to fetch the song."
+			});
+		}
+	},
 	async createSong(req, res) {
 		try {
-			console.log(req.body);
-
 			const song = await Song.create(req.body);
 			res.status(200).json(song);
 		} catch (err) {

@@ -33,8 +33,6 @@ export default {
   },
   methods: {
     navigateTo(route) {
-      console.log(route);
-
       this.$router.push(route);
     },
     logout() {

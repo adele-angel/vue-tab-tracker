@@ -15,6 +15,10 @@ module.exports = app => {
 	// @desc    Display all songs
 	// @access  Public
 	app.get("/songs", controllers.SongsController.index);
+	// @route   GET /songs/:songId
+	// @desc    Display song by ID
+	// @access  Public
+	app.get("/songs/:songId", controllers.SongsController.showSong);
 	// @route   POST /songs
 	// @desc    Create song
 	// @access  Public
