@@ -5,7 +5,9 @@
         <v-card class="mx-auto" tile>
           <v-app-bar dark color="cyan darken-2 elevation-0">
             <v-toolbar-title>{{title}}</v-toolbar-title>
+            <slot name="action" />
           </v-app-bar>
+
           <v-card-text class="px-xs-10 px-md-12">
             <slot>No slot content defined.</slot>
           </v-card-text>

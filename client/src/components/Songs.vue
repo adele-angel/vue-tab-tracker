@@ -1,5 +1,12 @@
 <template>
   <Panel title="Songs">
+    <div slot="action">
+      <router-link to="/songs/create">
+        <v-btn color="cyan" fab dark medium absolute bottom right>
+          <v-icon>mdi-plus</v-icon>
+        </v-btn>
+      </router-link>
+    </div>
     <div v-for="song in songs" :key="song.id">
       <p>
         {{song.title}}
