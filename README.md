@@ -55,6 +55,7 @@ For client
 
 ```
 $ cd /client
+$ npm install
 $ npm run serve
 ```
 
@@ -62,6 +63,7 @@ For server
 
 ```
 $ cd /server
+$ npm install
 $ nodemon
 ```
 
