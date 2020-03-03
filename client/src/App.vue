@@ -1,15 +1,13 @@
 <template>
   <v-app>
     <v-system-bar dark color="cyan darken-2"></v-system-bar>
-
     <!-- app toolbar -->
     <Header />
-
     <!-- sizes page content based upon application components -->
     <v-content>
       <main>
         <!-- provides the application the proper gutter -->
-        <v-container fluid class="my-12">
+        <v-container fluid class="my-3">
           <!-- using vue-router -->
           <router-view />
         </v-container>

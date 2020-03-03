@@ -30,7 +30,7 @@ For live demo [click here](https://adele-angel.github.io/vue-tab-tracker)
 **Client side dependencies**
 
 ```
-$ npm install --save axios vuetify vuex-router-sync
+$ npm install --save axios vuetify vuex-router-sync vue-youtube-embed
 ```
 
 **Server side dependencies**

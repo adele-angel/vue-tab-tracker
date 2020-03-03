@@ -8,12 +8,14 @@ import { sync } from "vuex-router-sync";
 import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import vuetify from "./plugins/vuetify";
-
-Vue.config.productionTip = false;
-
 Vue.use(Vuetify);
 
+import VueYouTubeEmbed from "vue-youtube-embed";
+Vue.use(VueYouTubeEmbed);
+
 sync(store, router);
+
+Vue.config.productionTip = false;
 
 new Vue({
 	router,

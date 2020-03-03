@@ -38,7 +38,7 @@ const routes = [
 	{
 		path: "/songs/:songId",
 		name: "song",
-		component: () => import("../components/ViewSong.vue")
+		component: () => import("../components/ViewSong/ViewSong.vue")
 	}
 ];
 
