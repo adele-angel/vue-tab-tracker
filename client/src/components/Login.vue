@@ -1,6 +1,6 @@
 <template>
   <Panel title="Login">
-    <v-form ref="formLogin" autocomplete="off" :lazy-validation="lazy">
+    <v-form ref="formLogin" autocomplete="off" lazy-validation>
       <v-text-field type="email" :rules="emailRules" v-model="email" label="E-Mail" required></v-text-field>
       <v-text-field
         type="password"
@@ -31,14 +31,20 @@ export default {
   data() {
     return {
       email: "",
-      emailRules: [v => !!v || "E-mail is required"],
+      emailRules: [
+        v => !!v || "E-mail is required",
+        v => (v || "").indexOf(" ") < 0 || "No spaces are allowed",
+        v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+      ],
       password: "",
       passwordRules: [v => !!v || "Password is required"],
-      lazy: false,
       error: null
     };
   },
   methods: {
+    validateForm() {
+      this.$refs.formLogin.validate();
+    },
     async login() {
       try {
         const response = await AuthenticationService.login({

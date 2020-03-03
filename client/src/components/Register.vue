@@ -1,6 +1,6 @@
 <template>
   <Panel title="Register">
-    <v-form ref="formRegister" autocomplete="off" :lazy-validation="lazy">
+    <v-form ref="formRegister" autocomplete="off" :lazy-validation="false">
       <v-text-field type="email" :rules="emailRules" v-model="email" label="E-Mail" required></v-text-field>
       <v-text-field
         type="password"
@@ -51,7 +51,6 @@ export default {
       ],
       password: "",
       match: "",
-      lazy: false,
       error: null
     };
   },
