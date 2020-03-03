@@ -5,8 +5,12 @@
     <div>
       <img :src="song.albumCoverURL" alt="song.album" />
     </div>
-    <Panel title="Lyrics">{{song.lyrics}}</Panel>
-    <Panel title="Tabs">{{song.tab}}</Panel>
+    <Panel title="Lyrics">
+      <div class="multiline">{{song.lyrics}}</div>
+    </Panel>
+    <Panel title="Tabs">
+      <div class="multiline">{{song.tab}}</div>
+    </Panel>
     <Panel title="Video">{{song.youtubeId}}</Panel>
   </Panel>
 </template>
@@ -31,3 +35,9 @@ export default {
   }
 };
 </script>
+
+<style  scoped>
+.multiline {
+  white-space: pre-line;
+}
+</style>
