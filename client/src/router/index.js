@@ -28,7 +28,7 @@ const routes = [
 	{
 		path: "/songs",
 		name: "songs",
-		component: () => import("../components/Songs.vue")
+		component: () => import("../components/Songs/Songs.vue")
 	},
 	{
 		path: "/songs/create",
