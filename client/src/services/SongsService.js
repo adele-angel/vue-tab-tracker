@@ -9,5 +9,8 @@ export default {
 	},
 	show(songId) {
 		return API().get(`songs/${songId}`);
+	},
+	update(song) {
+		return API().put(`songs/${song.id}`, song);
 	}
 };

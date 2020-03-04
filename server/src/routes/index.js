@@ -19,6 +19,10 @@ module.exports = app => {
 	// @desc    Display song by ID
 	// @access  Public
 	app.get("/songs/:songId", controllers.SongsController.showSong);
+	// @route   PUT /songs/:songId
+	// @desc    Edit song by ID
+	// @access  Public
+	app.put("/songs/:songId", controllers.SongsController.updateSong);
 	// @route   POST /songs
 	// @desc    Create song
 	// @access  Public

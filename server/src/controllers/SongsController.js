@@ -20,7 +20,7 @@ module.exports = {
 					id: req.params.songId
 				}
 			});
-			
+
 			res.status(200).json(song);
 		} catch (err) {
 			res.status(500).send({
@@ -40,12 +40,12 @@ module.exports = {
 	},
 	async updateSong(req, res) {
 		try {
-			await Song.update(req.body, {
+			const song = await Song.update(req.body, {
 				where: {
 					id: req.params.songId
 				}
 			});
-			res.status(200).json(req.body);
+			res.status(200).json(song);
 		} catch (err) {
 			res.status(500).send({
 				error: "An error has occurred trying to update the song."

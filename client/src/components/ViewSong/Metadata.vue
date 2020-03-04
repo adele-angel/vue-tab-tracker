@@ -4,6 +4,13 @@
       <p class="display-1">{{song.title}}</p>
       <p class="title mt-n3">{{song.artist}}</p>
       <p class="subtitle-1">{{song.genre}}</p>
+      <v-btn
+        @click="navigateTo({name: 'update-song', params: {songId: song.id}})"
+        dark
+        tile
+        color="cyan"
+        block
+      >Edit</v-btn>
     </v-col>
     <v-col cols="12" sm="6">
       <v-img :src="song.albumCoverURL"></v-img>
@@ -15,6 +22,11 @@
 <script>
 export default {
   name: "Metadata",
-  props: ["song"]
+  props: ["song"],
+  methods: {
+    navigateTo(route) {
+      this.$router.push(route);
+    }
+  }
 };
 </script>

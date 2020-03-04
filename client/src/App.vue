@@ -7,7 +7,7 @@
     <v-content>
       <main>
         <!-- provides the application the proper gutter -->
-        <v-container fluid class="my-3">
+        <v-container fluid class="my-6">
           <!-- using vue-router -->
           <router-view />
         </v-container>
