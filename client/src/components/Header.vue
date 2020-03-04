@@ -3,7 +3,7 @@
     <v-toolbar-title>
       <span class="logo mr-6" @click="navigateTo({name: 'home'})">vueTabTracker</span>
     </v-toolbar-title>
-    <v-btn value="Browse" text to="songs">
+    <v-btn value="Browse" text to="/songs">
       <span>Browse</span>
     </v-btn>
     <v-spacer></v-spacer>
@@ -28,9 +28,6 @@
 <script>
 export default {
   name: "Header",
-  data() {
-    return {};
-  },
   methods: {
     navigateTo(route) {
       this.$router.push(route);

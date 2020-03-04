@@ -1,5 +1,7 @@
 <template>
-  <div class="multiline">{{lyrics}}</div>
+  <Panel title="Lyrics">
+    <div class="multiline">{{lyrics}}</div>
+  </Panel>
 </template>
 
 <script>

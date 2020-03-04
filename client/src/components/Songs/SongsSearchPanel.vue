@@ -1,25 +1,17 @@
 <template>
-  <div>
-    <SongsSearchPanel />
-    <SongsPanel />
-  </div>
+  <Panel title="Search">
+    <v-card-text></v-card-text>
+  </Panel>
 </template>
 
 <script>
 import SongsService from "@/services/SongsService";
-import SongsPanel from "@/components/Songs/SongsPanel";
-import SongsSearchPanel from "@/components/Songs/SongsSearchPanel";
 
 export default {
-  name: "Songs",
-  components: {
-    SongsPanel,
-    SongsSearchPanel
-  },
+  name: "SongsSearchPanel",
   data() {
     return {
-      show: false,
-      songs: null
+      search: null
     };
   },
   methods: {

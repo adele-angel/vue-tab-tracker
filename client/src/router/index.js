@@ -44,6 +44,10 @@ const routes = [
 		path: "/songs/:songId/edit",
 		name: "update-song",
 		component: () => import("../components/UpdateSong.vue")
+	},
+	{
+		path: "*",
+		redirect: "songs"
 	}
 ];
 

@@ -58,13 +58,9 @@
 
 <script>
 import SongsService from "@/services/SongsService";
-import Panel from "@/components/Panel";
 
 export default {
   name: "UpdateSong",
-  components: {
-    Panel
-  },
   data() {
     return {
       valid: true,

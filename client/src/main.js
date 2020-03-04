@@ -13,6 +13,10 @@ Vue.use(Vuetify);
 import VueYouTubeEmbed from "vue-youtube-embed";
 Vue.use(VueYouTubeEmbed);
 
+import Panel from "@/components/globals/Panel";
+// global module
+Vue.component("Panel", Panel);
+
 sync(store, router);
 
 Vue.config.productionTip = false;

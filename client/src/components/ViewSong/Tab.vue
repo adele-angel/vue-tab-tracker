@@ -1,5 +1,7 @@
 <template>
-  <div class="multiline">{{tab}}</div>
+  <Panel title="Tabs">
+    <div class="multiline">{{tab}}</div>
+  </Panel>
 </template>
 
 <script>
