@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style>
 .multiline {
   white-space: pre-line;
 }

@@ -1,6 +1,6 @@
 <template>
   <v-col xs="12" class="mb-n3">
-    <v-card class="mx-auto" tile>
+    <v-card tile>
       <v-app-bar dark color="cyan darken-2 elevation-0">
         <v-toolbar-title>{{title}}</v-toolbar-title>
         <slot name="action" />

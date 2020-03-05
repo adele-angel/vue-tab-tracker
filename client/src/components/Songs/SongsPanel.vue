@@ -1,5 +1,5 @@
 <template>
-  <Panel title="Songs">
+  <Panel title="Songs" class="mt-3">
     <div slot="action">
       <router-link to="/songs/create">
         <v-btn color="cyan" fab dark medium absolute bottom right>
@@ -52,17 +52,21 @@ export default {
   name: "SongsPanel",
   data() {
     return {
-      show: false,
       songs: null
     };
+  },
+  watch: {
+    "$route.query.search": {
+      immediate: true,
+      async handler(value) {
+        this.songs = (await SongsService.index(value)).data;
+      }
+    }
   },
   methods: {
     navigateTo(route) {
       this.$router.push(route);
     }
-  },
-  async mounted() {
-    this.songs = (await SongsService.index()).data;
   }
 };
 </script>

@@ -18,14 +18,8 @@ export default {
   },
   data() {
     return {
-      show: false,
       songs: null
     };
-  },
-  methods: {
-    navigateTo(route) {
-      this.$router.push(route);
-    }
   },
   async mounted() {
     this.songs = (await SongsService.index()).data;
