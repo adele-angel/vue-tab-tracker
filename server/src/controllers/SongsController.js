@@ -9,13 +9,11 @@ module.exports = {
 			if (search) {
 				const songs = await Song.findAll({
 					where: {
-						where: {
-							[Op.or]: ["title", "artist", "genre", "album"].map(key => ({
-								[key]: {
-									[Op.like]: `%${search}%`
-								}
-							}))
-						}
+						[Op.or]: ["title", "artist", "genre", "album"].map(key => ({
+							[key]: {
+								[Op.like]: `%${search}%`
+							}
+						}))
 					}
 				});
 				res.status(200).json(songs);
