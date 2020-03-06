@@ -38,4 +38,12 @@ module.exports = app => {
 	// @desc    Delete user's bookmarks
 	// @access  Private
 	app.delete("/bookmarks/:bookmarkId", controllers.BookmarksController.deleteBookmark);
+	// @route   GET /history
+	// @desc    Display user's song history
+	// @access  Private
+	app.get("/history", controllers.HistoryController.index);
+	// @route   POST /history
+	// @desc    add user's recently visited song
+	// @access  Private
+	app.post("/history", controllers.HistoryController.createRecent);
 };

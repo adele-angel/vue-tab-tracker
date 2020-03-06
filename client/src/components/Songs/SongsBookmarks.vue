@@ -15,8 +15,14 @@ export default {
   data() {
     return {
       headers: [
-        { text: "Title", value: "title" },
-        { text: "Artist", value: "artist" }
+        {
+          text: "Title",
+          value: "title"
+        },
+        {
+          text: "Artist",
+          value: "artist"
+        }
       ],
       bookmarks: []
     };
@@ -32,7 +38,6 @@ export default {
         })
       ).data;
     }
-    console.log(this.bookmarks);
   }
 };
 </script>

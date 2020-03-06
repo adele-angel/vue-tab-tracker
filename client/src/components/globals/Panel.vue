@@ -5,7 +5,7 @@
         <v-toolbar-title>{{title}}</v-toolbar-title>
         <slot name="action" />
       </v-app-bar>
-      <v-card-text class="px-xs-8 px-md-10">
+      <v-card-text class="px-xs-2 px-md-5">
         <slot>No content available.</slot>
       </v-card-text>
     </v-card>

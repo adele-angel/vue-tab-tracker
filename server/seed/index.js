@@ -1,8 +1,9 @@
-const { sequelize, Song, Bookmark, User } = require("../src/models");
+const { sequelize, User, Song, Bookmark, History } = require("../src/models");
 
 const users = require("./users.json");
 const songs = require("./songs.json");
 const bookmarks = require("./bookmarks.json");
+const history = require("./history.json");
 
 sequelize.sync({ force: true }).then(async function() {
 	await users.map(user => {
@@ -13,5 +14,8 @@ sequelize.sync({ force: true }).then(async function() {
 	});
 	await bookmarks.map(bookmark => {
 		Bookmark.create(bookmark);
+	});
+	await history.map(recent => {
+		History.create(recent);
 	});
 });

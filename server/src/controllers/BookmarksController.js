@@ -1,6 +1,5 @@
 const _ = require("lodash");
-const { Bookmark } = require("../models");
-const { Song } = require("../models");
+const { Song, Bookmark } = require("../models");
 
 module.exports = {
 	async index(req, res) {
@@ -17,8 +16,7 @@ module.exports = {
 			const bookmarks = await Bookmark.findAll({
 				where: where,
 				include: { model: Song, as: "song" }
-			})
-			.map(bookmark => ({
+			}).map(bookmark => ({
 				id: bookmark.id,
 				songId: bookmark.songId,
 				userId: bookmark.userId,
@@ -34,7 +32,7 @@ module.exports = {
 				tab: bookmark.song.tab
 			}));
 
-			res.status(200).json(bookmarks);
+			res.status(200).json(bookmarks.reverse());
 		} catch (err) {
 			res.status(500).send({
 				error: "An error has occurred trying to fetch bookmarks."
