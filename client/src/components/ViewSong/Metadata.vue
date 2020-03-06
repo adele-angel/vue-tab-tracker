@@ -12,13 +12,7 @@
       </v-col>
     </v-row>
     <v-row class="ma-0 ma-sm-1 ma-md-3 ma-lg-6">
-      <v-btn
-        @click="navigateTo({name: 'update-song', params: {songId: song.id}})"
-        dark
-        tile
-        color="cyan"
-        block
-      >
+      <v-btn :to="{name: 'update-song', params: {songId: song.id}}" dark tile color="cyan" block>
         <span class="mr-1">Edit</span>
         <v-icon>mdi-lead-pencil</v-icon>
       </v-btn>
@@ -29,11 +23,6 @@
 <script>
 export default {
   name: "Metadata",
-  props: ["song"],
-  methods: {
-    navigateTo(route) {
-      this.$router.push(route);
-    }
-  }
+  props: ["song"]
 };
 </script>

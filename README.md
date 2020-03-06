@@ -30,7 +30,7 @@ For live demo [click here](https://adele-angel.github.io/vue-tab-tracker)
 **Client side dependencies**
 
 ```
-Adding @vuetify/cli:
+adding @vuetify/cli:
 $ vue add vuetify
 ```
 

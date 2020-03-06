@@ -59,7 +59,6 @@
 <script>
 import SongsService from "@/services/SongsService";
 
-
 export default {
   name: "CreateSong",
   data() {
@@ -116,6 +115,9 @@ export default {
     async createSong() {
       try {
         await SongsService.create(this.song);
+        this.$router.push({
+          name: "songs"
+        });
       } catch (error) {
         this.error = error.response.data.error;
       }

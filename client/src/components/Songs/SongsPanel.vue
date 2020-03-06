@@ -1,7 +1,7 @@
 <template>
   <Panel title="Songs" class="mt-3">
     <div slot="action">
-      <router-link to="/songs/create">
+      <router-link :to="{name: 'create-song'}">
         <v-btn color="cyan" fab dark medium absolute bottom right>
           <v-icon>mdi-plus</v-icon>
         </v-btn>
@@ -16,7 +16,7 @@
             <v-card-subtitle v-text="song.artist"></v-card-subtitle>
             <v-card-text>
               <v-btn
-                @click="navigateTo({name: 'song', params: {songId: song.id}})"
+                :to="{name: 'song', params: {songId: song.id}}"
                 dark
                 tile
                 color="cyan"
@@ -61,11 +61,6 @@ export default {
       async handler(value) {
         this.songs = (await SongsService.index(value)).data;
       }
-    }
-  },
-  methods: {
-    navigateTo(route) {
-      this.$router.push(route);
     }
   }
 };

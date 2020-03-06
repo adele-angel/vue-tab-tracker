@@ -6,7 +6,7 @@
         <slot name="action" />
       </v-app-bar>
       <v-card-text class="px-xs-8 px-md-10">
-        <slot>No slot content defined.</slot>
+        <slot>No content available.</slot>
       </v-card-text>
     </v-card>
   </v-col>
