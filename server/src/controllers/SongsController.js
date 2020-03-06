@@ -4,10 +4,11 @@ const { Song } = require("../models");
 module.exports = {
 	async index(req, res) {
 		try {
+			let songs = null;
 			const search = req.query.search;
 
 			if (search) {
-				const songs = await Song.findAll({
+				songs = await Song.findAll({
 					where: {
 						[Op.or]: ["title", "artist", "genre", "album"].map(key => ({
 							[key]: {
@@ -16,13 +17,13 @@ module.exports = {
 						}))
 					}
 				});
-				res.status(200).json(songs);
 			} else {
-				const songs = await Song.findAll({
+				songs = await Song.findAll({
 					limit: 10
 				});
-				res.status(200).json(songs);
 			}
+
+			res.status(200).json(songs);
 		} catch (err) {
 			res.status(500).send({
 				error: "An error has occurred trying to fetch the songs."

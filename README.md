@@ -1,4 +1,4 @@
-# vueTabTracker [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4)](https://github.com/prettier/prettier) [![npm version: 6.13.7](https://img.shields.io/badge/npm%20version-6.13.7-blue)](https://www.npmjs.com/) [![node version: 6.13.7](https://img.shields.io/badge/node%20version-13.5.0-blue)](https://nodejs.org/) [![@vue/cli: 4.2.2](https://img.shields.io/badge/@vue/cli-4.2.2-blue)](https://github.com/vuejs/vue-cli)
+# vueTabTracker [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4)](https://github.com/prettier/prettier) [![npm version: 6.14.2](https://img.shields.io/badge/npm%20version-6.14.2-blue)](https://www.npmjs.com/) [![node version: 13.10.1](https://img.shields.io/badge/node%20version-13.10.1-blue)](https://nodejs.org/) [![@vue/cli: 4.2.2](https://img.shields.io/badge/@vue/cli-4.2.2-blue)](https://github.com/vuejs/vue-cli) [![@vuetify/cli: 2.2.15](https://img.shields.io/badge/@vuetify/cli-2.2.15-blue)](https://vuetifyjs.com/en/getting-started/quick-start/)
 
 A Vue.js, Node.js & Express web application for keeping track of guitar tabs (Full Stack application).
 
@@ -30,14 +30,20 @@ For live demo [click here](https://adele-angel.github.io/vue-tab-tracker)
 **Client side dependencies**
 
 ```
-$ npm install --save axios vuetify vuex-router-sync vue-youtube-embed
+Adding @vuetify/cli:
+$ vue add vuetify
+```
+
+```
+$ npm install --save
+axios vuetify vuex-router-sync vue-youtube-embed lodash
 ```
 
 **Server side dependencies**
 
 ```
 $ npm install --save
-express cors morgan body-parser sequelize sqlite3 @hapi/joi jsonwebtoken bcrypt
+express cors morgan body-parser sequelize sqlite3 @hapi/joi jsonwebtoken bcryptjs
 ```
 
 ```

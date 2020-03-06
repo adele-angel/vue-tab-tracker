@@ -2,10 +2,8 @@
 	"name": "server",
 	"version": "1.0.0",
 	"description": "tab-tracker back-end",
-	"main": "src/app.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
+	"author": "Adele Angel",
+	"license": "ISC",
 	"keywords": [
 		"vue-tab-tracker",
 		"server",
@@ -17,14 +15,13 @@
 		"JavaScript",
 		"ES6"
 	],
-	"author": "Adele Angel",
-	"license": "ISC",
-	"devDependencies": {
-		"nodemon": "^2.0.2"
+	"main": "src/app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
 		"@hapi/joi": "^17.1.0",
-		"bcrypt": "^4.0.0",
+		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.19.0",
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
@@ -33,8 +30,11 @@
 		"sequelize": "^5.21.4",
 		"sqlite3": "^4.1.1"
 	},
+	"devDependencies": {
+		"nodemon": "^2.0.2"
+	},
 	"engines": {
-		"node": "13.5.0",
-		"npm": "6.13.7"
+		"node": "13.10.1",
+		"npm": "6.14.2"
 	}
 }
