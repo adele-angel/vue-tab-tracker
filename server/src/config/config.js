@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
 	port: process.env.PORT || 3000,
 	db: {
@@ -8,7 +10,7 @@ module.exports = {
 		options: {
 			dialect: process.env.DIALECT || "sqlite", // database type
 			host: process.env.HOST || "localhost", // database location
-			storage: "./src/db/tabtracker.sqlite" // sqlite file location
+			storage: path.resolve(__dirname, "../db/tabtracker.sqlite") // sqlite file location
 		}
 	},
 	authentication: {
