@@ -21,6 +21,13 @@ fs.readdirSync(__dirname)
 		db[model.name] = model;
 	});
 
+// associating models
+Object.keys(db).forEach(function(modelName) {
+	if ("associate" in db[modelName]) {
+		db[modelName].associate(db);
+	}
+});
+
 /**
  * declaring variables onto the db object
  * in order to gets access to the sequelize object and the models
