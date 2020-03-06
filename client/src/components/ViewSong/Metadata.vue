@@ -21,7 +21,7 @@
       <v-col cols="12" md="6">
         <v-btn
           v-if="isUserLoggedIn && !bookmark"
-          @click="addBookmark"
+          @click="setBookmark"
           dark
           tile
           color="red lighten-1"
@@ -32,7 +32,7 @@
         </v-btn>
         <v-btn
           v-if="isUserLoggedIn && bookmark"
-          @click="removeBookmark"
+          @click="unsetBookmark"
           dark
           tile
           color="yellow darken-2"
@@ -61,36 +61,42 @@ export default {
   computed: {
     ...mapState(["isUserLoggedIn", "user"])
   },
-  async mounted() {
-    if (!this.isUserLoggedIn) {
-      return;
-    }
+  watch: {
+    async song() {
+      if (!this.isUserLoggedIn) {
+        return;
+      }
 
-    try {
-      this.bookmark = (
-        await BookmarksService.index({
-          songId: this.$store.state.route.params.songId,
-          userId: this.$store.state.user.id
-        })
-      ).data;
-    } catch (error) {
-      this.error = error.response.data.error;
+      try {
+        const bookmarks = (
+          await BookmarksService.index({
+            songId: this.song.id,
+            userId: this.user.id
+          })
+        ).data;
+
+        if (bookmarks.length) {
+          this.bookmark = bookmarks[0];
+        }
+      } catch (error) {
+        this.error = error.response.data.error;
+      }
     }
   },
   methods: {
-    async addBookmark() {
+    async setBookmark() {
       try {
         this.bookmark = (
           await BookmarksService.post({
-            songId: this.$store.state.route.params.songId,
-            userId: this.$store.state.user.id
+            songId: this.song.id,
+            userId: this.user.id
           })
         ).data;
       } catch (error) {
         this.error = error.response.data.error;
       }
     },
-    async removeBookmark() {
+    async unsetBookmark() {
       try {
         await BookmarksService.delete(this.bookmark.id);
         this.bookmark = null;

@@ -24,6 +24,7 @@ For live demo [click here](https://adele-angel.github.io/vue-tab-tracker)
 - Single page application
 - MVC pattern: Model-View-Controller architecture
 - Reactive state management (Redux pattern using VUEX)
+- User authentication
 
 ## Packages
 

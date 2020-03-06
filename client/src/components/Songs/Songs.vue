@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SongsBookmarks />
     <SongsSearchPanel />
     <SongsPanel />
   </div>
@@ -9,12 +10,14 @@
 import SongsService from "@/services/SongsService";
 import SongsPanel from "@/components/Songs/SongsPanel";
 import SongsSearchPanel from "@/components/Songs/SongsSearchPanel";
+import SongsBookmarks from "@/components/Songs/SongsBookmarks";
 
 export default {
   name: "Songs",
   components: {
     SongsPanel,
-    SongsSearchPanel
+    SongsSearchPanel,
+    SongsBookmarks
   },
   data() {
     return {
