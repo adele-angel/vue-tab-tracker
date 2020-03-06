@@ -36,7 +36,7 @@ $ vue add vuetify
 
 ```
 $ npm install --save
-axios vuetify vuex-router-sync vue-youtube-embed lodash
+axios vuetify vuex-router-sync vue-youtube-embed lodash vuex-persistedstate
 ```
 
 **Server side dependencies**

@@ -62,6 +62,10 @@ export default {
     ...mapState(["isUserLoggedIn", "user"])
   },
   async mounted() {
+    if (!this.isUserLoggedIn) {
+      return;
+    }
+
     try {
       this.bookmark = (
         await BookmarksService.index({
