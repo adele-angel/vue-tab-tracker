@@ -30,4 +30,12 @@ module.exports = app => {
 	// @desc    Display user's bookmarks
 	// @access  Private
 	app.get("/bookmarks", controllers.BookmarksController.index);
+	// @route   POST /bookmarks
+	// @desc    Create user's bookmarks
+	// @access  Private
+	app.post("/bookmarks", controllers.BookmarksController.createBookmark);
+	// @route   DELETE /bookmarks/:bookmarkId
+	// @desc    Delete user's bookmarks
+	// @access  Private
+	app.delete("/bookmarks/:bookmarkId", controllers.BookmarksController.deleteBookmark);
 };
