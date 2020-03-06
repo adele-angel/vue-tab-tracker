@@ -1,5 +1,4 @@
 const controllers = require("../controllers/index");
-
 const AuthenticationControlPolicy = require("../policies/AuthenticationControllerPolicy");
 
 module.exports = app => {
@@ -27,4 +26,8 @@ module.exports = app => {
 	// @desc    Create song
 	// @access  Public
 	app.post("/songs", controllers.SongsController.createSong);
+	// @route   GET /bookmarks
+	// @desc    Display user's bookmarks
+	// @access  Private
+	app.get("/bookmarks", controllers.BookmarksController.index);
 };
