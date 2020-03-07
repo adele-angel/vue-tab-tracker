@@ -7,7 +7,7 @@ For live demo [click here](https://adele-angel.github.io/vue-tab-tracker)
 
 User actions:
 - Register and login into the system
-- View recent visited songs (after login)
+- View recently visited songs (after login)
 - View song bookmarks (after login)
 - View song list
 - View song metadata
