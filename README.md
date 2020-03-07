@@ -44,7 +44,7 @@ axios vuetify vuex-router-sync vue-youtube-embed lodash vuex-persistedstate
 
 ```
 $ npm install --save
-express cors morgan body-parser sequelize sqlite3 @hapi/joi jsonwebtoken bcryptjs
+express cors morgan body-parser sequelize sqlite3 @hapi/joi jsonwebtoken bcryptjs lodash passport passport-jwt
 ```
 
 ```

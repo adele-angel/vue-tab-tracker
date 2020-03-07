@@ -1,11 +1,11 @@
 <template>
   <div>
     <v-row>
-      <v-col cols="12" sm="5">
+      <v-col cols="12" sm="5" v-if="isUserLoggedIn">
         <RecentlyViewedSongs />
         <SongsBookmarks />
       </v-col>
-      <v-col cols="12" sm="7">
+      <v-col cols="12" :sm="isUserLoggedIn ? 7 : 12">
         <SongsSearchPanel />
         <SongsPanel />
       </v-col>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import SongsService from "@/services/SongsService";
 import SongsPanel from "@/components/Songs/SongsPanel";
 import SongsSearchPanel from "@/components/Songs/SongsSearchPanel";
@@ -32,6 +33,9 @@ export default {
     return {
       songs: null
     };
+  },
+  computed: {
+    ...mapState(["isUserLoggedIn"])
   },
   async mounted() {
     this.songs = (await SongsService.index()).data;

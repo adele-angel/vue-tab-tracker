@@ -4,7 +4,8 @@ const { Song, Bookmark } = require("../models");
 module.exports = {
 	async index(req, res) {
 		try {
-			const { songId, userId } = req.query;
+			const userId = req.user.id;
+			const { songId } = req.query;
 			const where = {
 				userId: userId
 			};
@@ -41,7 +42,8 @@ module.exports = {
 	},
 	async createBookmark(req, res) {
 		try {
-			const { songId, userId } = req.body.params;
+			const userId = req.user.id;
+			const { songId } = req.body.params;
 			const bookmark = await Bookmark.findOne({
 				where: {
 					songId: songId,
@@ -69,11 +71,21 @@ module.exports = {
 	},
 	async deleteBookmark(req, res) {
 		try {
-			const bookmark = await Bookmark.destroy({
+			const userId = req.user.id;
+			const bookmark = await Bookmark.findOne({
 				where: {
-					id: req.params.bookmarkId
+					id: req.params.bookmarkId,
+					userId: userId
 				}
 			});
+
+			if (!bookmark) {
+				res.status(403).json({
+					error: "You do not have access to this bookmark"
+				});
+			}
+
+			await bookmark.destroy();
 
 			res.status(200).json(bookmark);
 		} catch (err) {

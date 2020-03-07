@@ -6,7 +6,7 @@ module.exports = {
 		try {
 			const history = await History.findAll({
 				where: {
-					userId: req.query.userId
+					userId: req.user.id
 				},
 				include: { model: Song, as: "song" }
 			}).map(recent => ({
@@ -34,7 +34,8 @@ module.exports = {
 	},
 	async createRecent(req, res) {
 		try {
-			const { songId, userId } = req.body;
+			const userId = req.user.id;
+			const { songId } = req.body;
 			const recentlyViewed = await History.create({
 				songId: songId,
 				userId: userId

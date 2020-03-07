@@ -1,5 +1,10 @@
 <template>
   <Panel title="Bookmarks" class="mt-3">
+    <div slot="action">
+      <v-avatar color="red" class="ml-3">
+        <v-icon>mdi-heart</v-icon>
+      </v-avatar>
+    </div>
     <template>
       <v-data-table :headers="headers" :items="bookmarks" :items-per-page="5" class="elevation-1"></v-data-table>
     </template>
@@ -32,11 +37,7 @@ export default {
   },
   async mounted() {
     if (this.isUserLoggedIn) {
-      this.bookmarks = (
-        await BookmarksService.index({
-          userId: this.user.id
-        })
-      ).data;
+      this.bookmarks = (await BookmarksService.index()).data;
     }
   }
 };

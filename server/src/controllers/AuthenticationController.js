@@ -19,6 +19,7 @@ module.exports = {
 			res.status(200).json({
 				user,
 				token: jwtSignUser({
+					id: user.id,
 					email: user.email,
 					password: user.password
 				})
@@ -31,10 +32,9 @@ module.exports = {
 	},
 	async login(req, res) {
 		try {
-			const payload = req.body;
 			const user = await User.findOne({
 				where: {
-					email: payload.email
+					email: req.body.email
 				}
 			});
 
@@ -44,7 +44,7 @@ module.exports = {
 				});
 			}
 
-			const isValidPassword = user.comparePasswords(payload);
+			const isValidPassword = user.comparePasswords(req.body);
 
 			if (!isValidPassword) {
 				return res.status(403).send({
@@ -54,7 +54,11 @@ module.exports = {
 
 			res.status(200).json({
 				user,
-				token: jwtSignUser(payload)
+				token: jwtSignUser({
+					id: user.id,
+					email: user.email,
+					password: user.password
+				})
 			});
 		} catch (err) {
 			res.status(500).send({

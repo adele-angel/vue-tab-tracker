@@ -48,6 +48,7 @@ module.exports = {
 	async createSong(req, res) {
 		try {
 			const song = await Song.create(req.body);
+			
 			res.status(200).json(song);
 		} catch (err) {
 			res.status(500).send({
@@ -62,6 +63,7 @@ module.exports = {
 					id: req.params.songId
 				}
 			});
+
 			res.status(200).json(song);
 		} catch (err) {
 			res.status(500).send({

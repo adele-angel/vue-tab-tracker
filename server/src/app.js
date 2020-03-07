@@ -14,6 +14,9 @@ app.use(morgan("short"));
 app.use(bodyParser.json());
 app.use(cors());
 
+// set up passport logic when the application loads
+require("./config/passport");
+
 // routes
 require("./routes/index")(app);
 

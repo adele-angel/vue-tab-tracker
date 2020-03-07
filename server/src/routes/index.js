@@ -1,5 +1,7 @@
 const controllers = require("../controllers/index");
+
 const AuthenticationControlPolicy = require("../policies/AuthenticationControllerPolicy");
+const isAuthenticated = require("../policies/isAuthenticated");
 
 module.exports = app => {
 	// @route   POST /register
@@ -29,21 +31,21 @@ module.exports = app => {
 	// @route   GET /bookmarks
 	// @desc    Display user's bookmarks
 	// @access  Private
-	app.get("/bookmarks", controllers.BookmarksController.index);
+	app.get("/bookmarks", isAuthenticated, controllers.BookmarksController.index);
 	// @route   POST /bookmarks
 	// @desc    Create user's bookmarks
 	// @access  Private
-	app.post("/bookmarks", controllers.BookmarksController.createBookmark);
+	app.post("/bookmarks", isAuthenticated, controllers.BookmarksController.createBookmark);
 	// @route   DELETE /bookmarks/:bookmarkId
 	// @desc    Delete user's bookmarks
 	// @access  Private
-	app.delete("/bookmarks/:bookmarkId", controllers.BookmarksController.deleteBookmark);
+	app.delete("/bookmarks/:bookmarkId", isAuthenticated, controllers.BookmarksController.deleteBookmark);
 	// @route   GET /history
 	// @desc    Display user's song history
 	// @access  Private
-	app.get("/history", controllers.HistoryController.index);
+	app.get("/history", isAuthenticated, controllers.HistoryController.index);
 	// @route   POST /history
 	// @desc    add user's recently visited song
 	// @access  Private
-	app.post("/history", controllers.HistoryController.createRecent);
+	app.post("/history", isAuthenticated, controllers.HistoryController.createRecent);
 };
