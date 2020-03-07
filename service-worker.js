@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/vue-tab-tracker/precache-manifest.fce4e66a218bbc8e7450845bdfdfc5b3.js"
+  "/precache-manifest.1c244687823fe6dfdaace1062881216c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "client"});
