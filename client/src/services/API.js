@@ -4,7 +4,7 @@ import store from "@/store";
 export default () => {
 	// return connector
 	return axios.create({
-		baseURL: "http://localhost:3000", // server address
+		baseURL: "https://vue-tab-tracker-server.herokuapp.com/", // server address
 		headers: {
 			Authorization: `Bearer ${store.state.token}`
 		}
